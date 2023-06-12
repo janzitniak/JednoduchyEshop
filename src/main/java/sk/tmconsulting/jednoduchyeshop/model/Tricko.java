@@ -7,8 +7,8 @@ import jakarta.persistence.*;
 public class Tricko {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Tento riadok zabezpeci auto increment, cize id sa bude automaticky zvysovat o 1
-    @Column(name="id", nullable = false)
-    private Long id; // id pre potreby identifikaciu zaznamu v databaze
+    @Column(name="id", updatable = false, nullable = false)
+    private long id; // id pre potreby identifikaciu zaznamu v databaze
 
     @Column(name="farba", nullable = false)
     private String farba;
@@ -19,11 +19,11 @@ public class Tricko {
     @Column(name="menoZakaznika", nullable = false)
     private String menoZakaznika;
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
