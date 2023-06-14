@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Uprav záznam</title>
+</head>
+<body>
+  <h1>Uprav záznam</h1>
+  <form action="#" method="POST" th:action="@{/uloz-upraveny-zaznam}" th:object="${trickoZDatabazyThymeleaf}">
+      <input th:field="*{id}" type="hidden">
+      Farba <input type="text" th:field="*{farba}"><br>
+      Veľkosť <input type="text" th:field="*{velkost}"><br>
+      Meno zákazníka <input type="text" th:field="*{menoZakaznika}"><br>
+      <button type="submit">Ulož upravený záznam</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Zobrazenie všetkých záznamov</title>
+</head>
+<body>
+    <h1>Zobrazenie všetkých záznamov</h1>
+    <table> <!-- vytvarame tabulku -->
+      <tr> <!-- tr reprezentuje riadok v tabulke  -->
+        <th> <!-- td reprezentuje bunku, th reprezentuje bunku ako nadpis -->
+          Farba
+        </th>
+        <th>Veľkosť</th>
+        <th>Meno zákazníka</th>
+        <th>Akcia</th>
+        <th>Akcia</th>
+      </tr>
+      <tr th:each="trickoObjekt:${trickaZoznamThymeleaf}">
+        <td th:text="${trickoObjekt.farba}"></td>
+        <td th:text="${trickoObjekt.velkost}"></td>
+        <td th:text="${trickoObjekt.menoZakaznika}"></td>
+        <td>
+          <a th:href="@{/uprav-zaznam/{id}(id=${trickoObjekt.id})}">Uprav záznam</a>
+        </td>
+        <td>
+          <a th:href="@{/odstran-zaznam/{id}(id=${trickoObjekt.id})}">Odstráň záznam</a>
+        </td>
+      </tr>
+    </table>
+<br> <!-- vlozi prazdny riadok -->
+<a href="/">Späť na hlavnú stránku</a>
+</body>
+</html>
